@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<nav class="navbar navbar-dark bg-dark" style="background-color: #e3f2fd;">
+  <a class="navbar-brand">BOOKS</a>
+  <a class="btn btn-primary" href="{{url_for('index')}}" role="button">Logout</a>
+</nav>
+{% if message=="Thanks For Your Review" or message=="Review Already Exist With That Username" %}
+<div class="alert alert-primary" role="alert">
+  {{message}}
+</div>
+{% endif %}
+  <div class="card">
+    <div class="card-body">
+      <h1>Reviews!!!</h1>
+      <h4 class="card-title">ISBN : {{isbn}}</h4>
+      {% for review in reviews %}
+      <p id="reviewstxt" class="card-text">{{review.username}} : {{review.review}}</p>
+      {% endfor %}
+      <a href="{{url_for('add_review_to_psql',isbn=isbn)}}" class="card-link">Add An Review</a>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block body %}
+<nav class="navbar navbar-dark bg-dark" style="background-color: #e3f2fd;">
+  <a class="navbar-brand">BOOKS</a>
+  <a class="btn btn-primary" href="{{url_for('index')}}" role="button">Logout</a>
+</nav>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% if alert=="BOOK NOT FOUND"%}
+<div class="alert alert-primary" role="alert">
+  {{alert}}
+</div>
+{% endif %}
+<!-- The form -->
+<form class="example" action="{{url_for('show_list')}}" method="post">
+  <input type="text" placeholder="Search a Book by ISBN,title,author.." name="search_bar">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+{% if message=="show_list" %}
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">ISBN</th>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for book in books %}
+    <tr>
+      <td><a href="{{url_for('book_reviews',isbn=book.isbn)}}">{{book.isbn}}</a></td>
+      <td><a href="{{url_for('book_reviews',isbn=book.isbn)}}">{{book.title}}</a></td>
+      <td><a href="{{url_for('book_reviews',isbn=book.isbn)}}">{{book.author}}</a></td>
+      <td>{{book.year}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+{% endblock %}

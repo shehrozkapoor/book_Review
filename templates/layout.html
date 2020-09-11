@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CS50 Project 1</title>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      background-image: url('https://fsa.zobj.net/crop.php?r=dsAir5Lqh0JdSpY8ppgsUkXldcv6SPKoBkcQu7JkeeKlx7KMC9SdY3dgGqUZwicmid1v_YEbig8fm8X7GxFQ2BQ4EMJ2lIDGPN9MNUO1HJwDp8_hCocG5-GzOfValYslOJyh9F5S4dmFEy2-');      
+    }
+    .sign{
+        margin-top: 20%;
+        margin-left: 20%;
+        margin-right: 20%;
+        color: white;
+    }
+    .sign a{
+        float: right;
+        padding-top: 5px;
+        margin-top: 20px;
+    }
+    * {
+    box-sizing: border-box;
+  }
+  form.example{
+      padding:100px;
+  }
+  /* Style the search field */
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  /* Style the submit button */
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  td a{
+    color:#dee2e6;
+    text-transform: uppercase;
+  }
+  td a:hover{
+    color:cadetblue;
+  }
+  #welcome{
+    text-align: center;
+  }
+  .card{
+    margin: 100px;
+    background-color:#343a40;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: center;
+    padding:20px;
+  }
+  #reviewstxt{
+    text-align: left;
+    text-transform: capitalize;
+  }
+  #reviewstxtu{
+    text-transform: lowercase;
+  }
+  #rating{
+    text-align:center;
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    margin-top: 40px;
+    text-transform: capitalize;
+  }
+  .avg_{
+    text-decoration: underline;
+    color:#0b7dda;
+  }
+</style>
+    </head>
+    <body>
+        {% block body %} 
+        {% endblock %}
+    </body>
+</html>

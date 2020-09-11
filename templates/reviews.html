@@ -1,0 +1,27 @@
+{% extends "layout.html"%}
+
+{% block body %}
+<nav class="navbar navbar-dark bg-dark" style="background-color: #e3f2fd;">
+  <a class="navbar-brand">BOOKS</a>
+  <a class="btn btn-primary" href="{{url_for('index')}}" role="button">Logout</a>
+</nav>
+{% if message=="Your Review Is Already Submitted"%}
+<div class="alert alert-dark" role="alert" id="rating">
+ {{message}}
+</div>
+{% endif %}
+<div class="alert alert-dark" role="alert" id="rating">
+  <h3>The avg rating of this Book on GoodReads is <div class="avg_">{{avg_rating}}</div></h1>
+</div>
+    {% for book in books %}
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">ISBN: {{book.isbn}}</h4>
+      <p class="card-text">BOOK TTILE: {{book.title}} <br/> AUTHOR: {{book.author}}<br/>Year: {{book.year}}</p>
+      <a href="{{url_for('show_reviews',isbn=book.isbn)}}" class="card-link">See Reviews</a>
+      <a href="{{url_for('add_review_to_psql',isbn=book.isbn)}}" class="card-link">Add An Review</a>
+    </div>
+  </div>
+  {% endfor%}
+
+{% endblock %}

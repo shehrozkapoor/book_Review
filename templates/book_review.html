@@ -1,0 +1,34 @@
+{% extends "layout.html"%}
+
+{% block body %}
+<div class="alert alert-primary" role="alert">
+    {{message}}
+  </div>
+{% if message=="show_list" %}
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">ISBN</th>
+      <th scope="col">Title</th>
+      <th scope="col">Author</th>
+      <th scope="col">Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for book in books %}
+  <a href="{{url_for('book_reviews')}}" method="post">
+    <tr>
+      <th scope="row">1</th>
+      <td>{{book.isbn}}</td>
+      <td>{{book.title}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.year}}</td>
+    </tr>
+  </a>
+  </tbody>
+</table>
+{% endfor%}
+{% endif %}
+
+{% endblock %}
